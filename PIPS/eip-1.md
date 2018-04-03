@@ -3,14 +3,14 @@ pip: 001
 title: PIP Rules Master
 status: Active
 type: Meta
-author: Matthew J. Long <mb@Peercoin.org>, Hudson Jameson <hudson@Peercoin.org>
+author: Matthew J. Long <Matt@example.org>
 created: 2018-04-03
 ---
 
 What is a PIP?
 --------------
 
-PIP stands for Peercoin Improvement Proposal. An PIP is a design document providing information to the Peercoin community, or describing a new feature for Peercoin or its processes or environment. The PIP should provide a concise technical specification of the feature and a rationale for the feature. The PIP author is responsible for building consensus within the community and documenting dissenting opinions.
+PIP stands for Peercoin Improvement Proposal. A PIP is a design document providing information to the Peercoin community, or describing a new feature for Peercoin or its processes or environment. The PIP should provide a concise technical specification of the feature and a rationale for the feature. The PIP author is responsible for building consensus within the community and documenting dissenting opinions.
 
 PIP Rational
 ------------
@@ -25,11 +25,8 @@ PIP Types
 There are three types of PIP:
 
 -   A **Standard Track PIP** describes any change that affects most or all Peercoin implementations, such as a change to the the network protocol, a change in block or transaction validity rules, proposed application standards/conventions, or any change or addition that affects the interoperability of applications using Peercoin. Furthermore Standard PIPs can be broken down into the following categories.
-    -   **Core** - improvements requiring a consensus fork (e.g. [PIP5], [PIP101]), as well as changes that are not necessarily consensus critical but may be relevant to “core dev” discussions (for example, [PIP90], and the miner/node strategy changes 2, 3, and 4 of [PIP86]).
-    -   **Networking** - includes improvements around [devp2p] ([PIP8]) and [Light Peercoin Subprotocol], as well as proposed improvements to network protocol specifications of [whisper] and [swarm].
-    -   **Interface** - includes improvements around client [API/RPC] specifications and standards, and also certain language-level standards like method names ([PIP59], [PIP6]) and [contract ABIs]. The label “interface” aligns with the [interfaces repo] and discussion should primarily occur in that repository before a PIP is submitted to the PIPs repository.
-    -   **ERC** - application-level standards and conventions, including contract standards such as token standards ([ERC20]), name registries ([ERC26], [ERC137]), URI schemes ([ERC67]), library/package formats ([PIP82]), and wallet formats ([PIP75], [PIP85]).
-
+    -   **Core** - improvements requiring a consensus fork, as well as changes that are not necessarily consensus critical but may be relevant to “core dev” discussions.
+    -   **Interface** - includes improvements around client [API/RPC] specifications and standards, and also certain language-level standards like method names and [contract ABIs]. The label “interface” aligns with the [interfaces repo] and discussion should primarily occur in that repository before a PIP is submitted to the PIPs repository.
 -   An **Informational PIP** describes a Peercoin design issue, or provides general guidelines or information to the Peercoin community, but does not propose a new feature. Informational PIPs do not necessarily represent Peercoin community consensus or a recommendation, so users and implementers are free to ignore Informational PIPs or follow their advice.
 -   A **Meta PIP** describes a process surrounding Peercoin or proposes a change to (or an event in) a process. Process PIPs are like Standards Track PIPs but apply to areas other than the Peercoin protocol itself. They may propose an implementation, but not to Peercoin's codebase; they often require community consensus; unlike Informational PIPs, they are more than recommendations, and users are typically not free to ignore them. Examples include procedures, guidelines, changes to the decision-making process, and changes to the tools or environment used in Peercoin development. Any meta-PIP is also considered a Process PIP.
 
@@ -64,7 +61,7 @@ The possible paths of the status of PIPs are as follows:
 
 ![PIP Process](eip-1/process.png)
 
-Some Informational and Process PIPs may also have a status of “Active” if they are never meant to be completed. E.g. PIP 1 (this PIP).
+Some Informational and Process PIPs may also have a status of “Active” if they are never meant to be completed. E.g. PIP 001 (this PIP).
 
 What belongs in a successful PIP?
 ---------------------------------
@@ -119,7 +116,7 @@ PIP Header Preamble
 
 Each PIP must begin with an RFC 822 style header preamble, preceded and followed by three hyphens ('---'). The headers must appear in the following order. Headers marked with "*" are optional and are described below. All other headers are required.
 
-` eip: ` <PIP number> (this is determined by the PIP editor)
+` pip: ` <PIP number> (this is determined by the PIP editor)
 
 ` title: `<PIP title>
 
@@ -129,9 +126,9 @@ Each PIP must begin with an RFC 822 style header preamble, preceded and followed
 
 ` status: `<Draft | Active | Accepted | Deferred | Rejected | Withdrawn | Final | Superseded>
 
-` type: `<Standards Track (Core, Networking, Interface, ERC)  | Informational | Meta>
+` type: `<Standards Track (Core or Interface)  | Informational | Meta>
 
-` * category `: <Core | Networking | Interface | ERC>
+` * category `: <Core | Interface>
 
 ` created: `<date created on, in ISO 8601 (yyyy-mm-dd) format>
 
@@ -229,41 +226,22 @@ The editors don't pass judgment on PIPs. We merely do the administrative & edito
 History
 -------
 
+PIP Rules Master is forked from 
+
 This document was derived heavily from [Bitcoin's BIP-0001] written by Amir Taaki which in turn was derived from [Python's PEP-0001]. In many places text was simply copied and modified. Although the PEP-0001 text was written by Barry Warsaw, Jeremy Hylton, and David Goodger, they are not responsible for its use in the Peercoin Improvement Process, and should not be bothered with technical questions specific to Peercoin or the PIP. Please direct all comments to the PIP editors.
 
 3 April 2018: PIP 001 Proposed
 
-  [PIP5]: https://github.com/Peercoin/PIPs/blob/master/PIPS/eip-5.md
-  [PIP101]: https://github.com/Peercoin/PIPs/issues/28
-  [PIP90]: https://github.com/Peercoin/PIPs/issues/90
-  [PIP86]: https://github.com/Peercoin/PIPs/issues/86#issue-145324865
-  [devp2p]: https://github.com/Peercoin/wiki/wiki/%C3%90%CE%9EVp2p-Wire-Protocol
-  [PIP8]: https://github.com/Peercoin/PIPs/blob/master/PIPS/eip-8.md
-  [Light Peercoin Subprotocol]: https://github.com/Peercoin/wiki/wiki/Light-client-protocol
-  [whisper]: https://github.com/Peercoin/go-Peercoin/wiki/Whisper-Overview
-  [swarm]: https://github.com/Peercoin/go-Peercoin/pull/2959
-  [API/RPC]: https://github.com/Peercoin/wiki/wiki/JSON-RPC
-  [PIP59]: https://github.com/Peercoin/PIPs/issues/59
-  [PIP6]: https://github.com/Peercoin/PIPs/blob/master/PIPS/eip-6.md
-  [contract ABIs]: https://github.com/Peercoin/wiki/wiki/Peercoin-Contract-ABI
-  [interfaces repo]: https://github.com/Peercoin/interfaces
-  [ERC20]: https://github.com/Peercoin/PIPs/issues/20
-  [ERC26]: https://github.com/Peercoin/PIPs/issues/26
-  [ERC137]: https://github.com/Peercoin/PIPs/issues/137
-  [ERC67]: https://github.com/Peercoin/PIPs/issues/67
-  [PIP82]: https://github.com/Peercoin/PIPs/issues/82
-  [PIP75]: https://github.com/Peercoin/PIPs/issues/75
-  [PIP85]: https://github.com/Peercoin/PIPs/issues/85
   [the Peercoin subreddit]: https://www.reddit.com/r/Peercoin/
-  [one of the Peercoin Gitter chat rooms]: https://gitter.im/Peercoin/
-  [pull request]: https://github.com/Peercoin/PIPs/pulls
+  [pull request]: https://github.com/MattLongCT/PIPs/pulls
   [formal specification]: https://github.com/Peercoin/yellowpaper
-  [the Issues section of this repository]: https://github.com/Peercoin/PIPs/issues
+  [the Issues section of this repository]: https://github.com/MattLonCT/PIPs/issues
   [markdown]: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
+  [Ethereum's EIP-0001]: https://github.com/ethereum/EIPs
   [Bitcoin's BIP-0001]: https://github.com/bitcoin/bips
   [Python's PEP-0001]: https://www.python.org/dev/peps/
 
 Copyright
 ---------
 
-Copyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).
+--

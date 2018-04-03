@@ -1,10 +1,17 @@
 # PIPs
 Peercoin Improvement Proposals (PIPs) describe standards for the Peercoin platform, including core protocol specifications, client APIs, and contract standards.
 
+<<<<<<< HEAD
 A browsable version of all current and draft PIPs can be found on [the official EIP site](https://peercoin.net/).
 
 # Contributing
 First review [PIP-10](PIPS/pip-10.md). Then clone the repository and add your PIP to it. There is a [template PIP here](pip-tplt.md). Then submit a Pull Request to MattLongCT's [PIPs repository](https://github.com/MattLongCT/PIPs).
+=======
+A browsable version of all current and draft PIPs can be found on the official EIP site.
+
+# Contributing
+First review [PIP-001](PIPS/eip-1.md). Then clone the repository and add your PIP to it. There is a [template PIP here](eip-X.md). Then submit a Pull Request to MattLongCT's [PIPs repository](https://github.com/MattLongCT/PIPs).
+>>>>>>> 139d644bc9dd9da112e58f9fd8fe6d44f76466d2
 
 # PIP status terms
 * **Draft** - a PIP that is open for consideration
